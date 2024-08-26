@@ -2,9 +2,6 @@
 
 //const { formSubmission } = require("./scriptHelper");
 
-//like line 23 in script helper... what is testInput?
-//Q: which chapter tells me about how to modify text in a function, an example of this?
-
 window.addEventListener("load", function() {
     let list = document.getElementById("faultyItems");
 
@@ -24,15 +21,6 @@ window.addEventListener("load", function() {
         let cargoMassInput = document.querySelector("input[name=cargoMass]");
         let cargoMass = cargoMassInput.value;
 
-        console.log("pilot",pilot,copilot,fuelLevel,cargoMass);
-
-        // alert(`
-        // Pilot Name: ${pilot}
-        // Copilot Name: ${copilot}
-        // Fuel Level: ${fuelLevel}
-        // Cargo Mass: ${cargoMass}
-        // `);
-
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass);
 
     })
@@ -50,8 +38,3 @@ window.addEventListener("load", function() {
     // })
     
  });
-
- //add destination you are supposed to send it to this thing. console log name of planet. selected planet.name. 
- //inner HTML changes
-
- //fuel = get element by id. this is how you change attributes to the elemnt.

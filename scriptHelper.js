@@ -34,27 +34,29 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  function formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoLevel) { //should be using validateInput but (testInput) is not defined
     console.log("yay form submission!")
 
-    if (pilotName === ""){
+    if (pilotName === "" || copilotName === ""){
         alert("All fields are required")
+     } else if (isNaN(pilotName) === false || isNaN(copilotName) === false) {
+         alert("Pilot and Copilot input cannot be numbers")        
     } else {
         list.style.visibility="visible"; //task does not say to make this visible
         pilotStatus.innerHTML=`Pilot ${pilotName} is ready for lunch`;
-    }
-
-    if (copilotName === ""){
-        alert("All fields are required")
-    } else {
         copilotStatus.innerHTML=`Copilot ${copilotName} is ready for lunch`;
     }
 
-    if (fuelLevel < 10000){
+
+    if (isNaN(fuelLevel)){
+        alert ("Fuel Level must be a number.")
+    } else if (fuelLevel < 10000){
         list.style.visibility="visible";
         fuelStatus.innerHTML="Not enough fuel for the journey";
         launchStatus.innerHTML="Shuttle not ready for launch";
         launchStatus.style.color="red";
     }
-
-    if (cargoLevel > 10000){
+ 
+    if (isNaN(cargoLevel)) {
+        alert ("Cargo Mass must be a number.")
+    } else if (cargoLevel > 10000){
         list.style.visibility="visible";
         cargoStatus.innerHTML="Too much mass for the shuttle to take off";
         launchStatus.innerHTML="Shuttle not ready for launch";
